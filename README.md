@@ -5,7 +5,7 @@ I did not receive the foobar challange, just solving the questions found on Gith
 Directory Structure 
 
 google-foobar   
-|____n3a9 - questions (Questions received by github user n3a9 https://github.com/n3a9/google-foobar )    
+|____n3a9 - questions (Questions received by github user n3a9 https://github.com/n3a9/google-foobar )         
 | |  
 | |____Level 2   
 | | |____numbers_station_coded_messages.md   
