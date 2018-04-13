@@ -1,25 +1,13 @@
-### IN PROGRESS ###
-
-
-# def answer(n):
-# 	return len([(x,y) for x in range(0,n) for y in range (0,n) if x >=1 and y >= 1 and x != y and x+y==n])//2
-
-# print (answer(200))
-
 def answer(n):
-	lookup = {}
-	posib = 0
+	memo = [[0 for i in range(n + 1)] for j in range(n + 1)]
+	memo[0][0] = 1
+	for row in range(1, n + 1):
+	    for col in range(0, n + 1):
+	        memo[row][col] = memo[row - 1][col]
+	        if col >= row:
+	            memo[row][col] += memo[row - 1][col - row]
+	        # print ('for row: {} col: {} matrix: {}'.format(row,col,memo))
+	return memo
 
-	if n <3:
-		return "Incorrect Value"
-	elif n>=3 and n<=200:
-		for number in range (3,n+1):
-
-			posib = [(x,y) for x in range(0,number) for y in range (0,number) if x >=1 and y >= 1 and x != y and x+y==number and x > y]
-			lookup[number] = len(posib)
-			
-
-	else:
-		return "Commander Lambda is not made of money :O"
-
-print (answer(4))	
+memo = answer(n)
+print(memo[n][n] - 1)
