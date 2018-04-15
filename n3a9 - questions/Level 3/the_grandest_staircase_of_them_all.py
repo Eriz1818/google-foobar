@@ -6,9 +6,9 @@ def answer(n):
 	        memo[row][col] = memo[row - 1][col]
 	        if col >= row:
 	            memo[row][col] += memo[row - 1][col - row]
-	        print ('for row: {} col: {} matrix: {}'.format(row,col,memo))
+	        # print ('for row: {} col: {} matrix: {}'.format(row,col,memo))
 	return memo
 
-num = 3
+num = 13
 memo = answer(num)
 print(memo[num][num] - 1)
